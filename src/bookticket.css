@@ -10,14 +10,123 @@
     
     
   }
-  .booktickets{
-    color: black;
-    font-size: 15px;
-    position: relative;
-    left: 850px;
-    top:10px;
-    display: inline-block;
+  .book1{
+    position: absolute;
+    width: 449px;
+    height: 50px;
+    left: 54px;
+    top: 90px;
+    
+    font-family: 'Akshar';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+    
+    color: #fefefe;
+    
   }
+  .bookfrom{
+    box-sizing: border-box;
+
+position: absolute;
+width: 507px;
+height: 620px;
+left: 466px;
+top: 359px;
+
+background: #4179A2;
+border: 1px solid #000000;
+border-radius: 15px;
+  }
+
+  .from{
+    position: absolute;
+left: 10px;
+top: 2px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+color: #fefefe;
+  }
+  .selectfrom{
+    position: absolute;
+    top: 25px;
+    width:300px;
+    left: 10px;
+  }
+
+  .to{
+    position: absolute;
+left: 10px;
+top: 70px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+color: #fefefe;
+  }
+  .selectto{
+    position: absolute;
+    top: 65px;
+    width:300px;
+    left: 10px;
+  }
+
+  .tickettype{
+    position: absolute;
+left: 10px;
+top: 140px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+color: #fefefe;
+  }
+  .type{
+    position: absolute;
+    top: 105px;
+    left: 10px;
+    width:300px;
+  }
+
+  .nopass{
+    position: absolute;
+left: 10px;
+top: 230px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+color: #fefefe;
+  }
+  .nopassfield{
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width:300px;
+
+  }
+
+  .submit{
+    position: absolute;
+width: 190px;
+height: 48px;
+left: 624px;
+top: 880px;
+
+background: #44C0AA;
+border-radius: 7px;
+  }
+
+
+
   .booktickets{
     color: black;
     font-size: 15px;
