@@ -1,0 +1,63 @@
+
+.home{
+
+  font-size: 15px;
+  position: relative;
+  left: 800px;
+  color: black;
+  top:10px;
+  display: inline-block;
+  
+  
+}
+.booktickets{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  left: 850px;
+  top:10px;
+  display: inline-block;
+}
+.booktickets{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  left: 850px;
+  top:10px;
+  display: inline-block;
+}
+.terminals{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  left: 900px;
+  top:10px;
+  display: inline-block;
+}
+.faredetails{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  left: 950px;
+  top:10px;
+  display: inline-block;
+}
+.login{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  left: 1000px;
+  top:10px;
+  display: inline-block;
+}
+.rectangle{
+  position: absolute;
+  width: 1540px;
+  height: 150px;
+  left: 0px;
+  top: 80px;
+  
+  background: #44C0AA;
+  border-radius: 50px;
+}
+
