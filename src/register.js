@@ -17,7 +17,7 @@ export const Register= () =>{
             <label htmlfor="Password">Password</label>
             <input value={pass} type="password" placeholder="********" id="password" name="password" />
             <button type="submit">Log In</button>
-        </form><button>Already have an account?Register here</button></>
+        </form><button>Already have an account? Login here</button></>
     )
 
 }

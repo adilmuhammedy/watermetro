@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-export const Login= () =>{
+export const Login= (props) =>{
     const [email,setEmail]=useState('');
     const [pass, setPass]=useState('');
    
@@ -16,7 +16,7 @@ export const Login= () =>{
             <label htmlfor="Password">Password</label>
             <input value={pass} type="password" placeholder="********" id="password" name="password" />
             <button type="submit">Log In</button>
-        </form><button>Don't have an account?Register here</button></>
+        </form><button onClick={}>Don't have an account? Register here</button></>
     )
 
 }
