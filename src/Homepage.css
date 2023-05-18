@@ -1,23 +1,17 @@
 
 .home{
 
-  font-size: 15px;
+  font-size: 150px;
   position: relative;
   left: 800px;
   color: black;
   top:10px;
   display: inline-block;
+  cursor: pointer;
   
   
 }
-.booktickets{
-  color: black;
-  font-size: 25px;
-  position: relative;
-  left: 850px;
-  top:10px;
-  display: inline-block;
-}
+
 .booktickets{
   color: black;
   font-size: 15px;
@@ -25,6 +19,7 @@
   left: 850px;
   top:10px;
   display: inline-block;
+  cursor: pointer;
 }
 .terminals{
   color: black;
@@ -33,6 +28,7 @@
   left: 900px;
   top:10px;
   display: inline-block;
+  cursor: pointer;
 }
 .faredetails{
   color: black;
@@ -41,6 +37,7 @@
   left: 950px;
   top:10px;
   display: inline-block;
+  cursor: pointer;
 }
 .login{
   color: black;
@@ -49,15 +46,15 @@
   left: 1000px;
   top:10px;
   display: inline-block;
+  cursor: pointer;
 }
-.rectangle{
-  position: absolute;
-  width: 1540px;
-  height: 150px;
-  left: 0px;
+.rectangle {
+  position: relative; /* Change from absolute to relative */
+  width: 140px;
+  height: 100px;
+  margin-left: auto; /* Add margin-left and margin-right with auto */
+  margin-right: auto;
   top: 80px;
-  
   background: #44C0AA;
-  border-radius: 50px;
+  
 }
-
