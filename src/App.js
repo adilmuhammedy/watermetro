@@ -1,9 +1,5 @@
-import React ,{useState} from 'react'
-
+import React from 'react';
 import Home from './Homepage';
-import {Login} from './login';
-import {Register} from './register';
-
 
 function App() {
   const [currentForm ,setCurrentForm]=useState('login')
@@ -13,10 +9,8 @@ function App() {
 
   }
   return (
-    <div className="App">{
-      currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
-    }
-    </div>
+    <Home/>
   );
 }
-  export default App;
+
+export default App;
