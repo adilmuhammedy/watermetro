@@ -1,15 +1,21 @@
 import React from 'react';
-import Home from './Homepage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
+import HomePage from './Homepage';
+import LoginPage from './login';
+import RegisterPage from './register';
+
 
 function App() {
-  const [currentForm ,setCurrentForm]=useState('login')
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-
-  }
   return (
-    <Home/>
+    <><Router>
+      <Switch>
+         <Route exact path="/" component={HomePage}/>
+         <Route path="/login" component={LoginPage}/>
+         <Route path="/register" component={RegisterPage}/>
+         </Switch>
+    </Router>
+    </>
+    
   );
 }
 

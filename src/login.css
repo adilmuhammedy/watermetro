@@ -1,31 +1,36 @@
-.main{
-    position: absolute;
-    width: 189px;
+.formcontainer,.loginform{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        position: absolute;
+width: 189px;
 height: 70px;
-left: 70px;
-top: 100px;
+left: 73px;
+top: 130px;
+
 font-family: 'Akshar';
 font-style: normal;
 font-weight: 700;
-font-size: px;
+font-size: 50px;
 line-height: 70px;
-letter-spacing: 0.1em;
+letter-spacing: 0.05em;
 
-color: #000000;
+
+color: #FFFFFF;
+        
+        
 }
-.field{
-    
-    
-position: absolute;
-width: 98px;
+.email{
+    position: absolute;
+width: 197px;
 height: 30px;
-left: 503px;
-top: 486px;
+left: 450px;
+top: 20px;
 
 font-family: 'Literata';
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 15px;
 line-height: 30px;
 /* identical to box height */
 
@@ -33,3 +38,88 @@ letter-spacing: 0.05em;
 
 color: #000000;
 }
+.password{
+    position: absolute;
+width: 98px;
+height: 30px;
+left: 450px;
+top: 100px;
+
+font-family: 'Literata';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 30px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+
+color: #000000;
+
+}
+.field{
+    position: absolute;
+width: 280px;
+height: 30px;
+left: 450px;
+top: 60px;
+border-radius: 10px;
+box-shadow: #000000;
+
+
+}
+.field1{
+    position: absolute;
+width: 280px;
+height: 30px;
+left: 450px;
+top: 140px;
+border-radius: 10px;
+box-shadow: #000000;
+}
+
+.submit{
+    position: absolute;
+width: 89px;
+height: 30px;
+left: 550px;
+top: 200px;
+
+font-family: 'Literata';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 30px;
+/* identical to box height */
+border-radius: 10px;
+border-color: #44C0AA;
+letter-spacing: 0.05em;
+
+color: #faf9f9;
+border-width: 0px;
+
+background-color: #44C0AA;
+}
+.noaccount{
+    position: absolute;
+width: 200px;
+height: 24px;
+left: 565px;
+top: 370px;
+
+font-family: 'Literata';
+font-style: normal;
+font-weight: 300;
+font-size: 13px;
+line-height: 24px;
+/* identical to box height */
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+border-width: 0px;
+
+letter-spacing: 0.02em;
+
+color: #000000;
+
+}
+

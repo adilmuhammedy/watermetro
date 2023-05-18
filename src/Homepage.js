@@ -10,7 +10,7 @@ function Home() {
         <Link to="/book-tickets" className="booktickets">BOOK TICKETS</Link>
         <h4 className="terminals">TERMINALS</h4>
         <h4 className="faredetails">FARE DETAILS</h4>
-        <h4 className="login">LOGIN</h4>
+        <Link to="/login" className="login">LOGIN</Link>
       </header>
       <div className="rectangle"></div>
     </div>
