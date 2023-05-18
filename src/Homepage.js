@@ -24,7 +24,7 @@ function Home() {
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails">FARE DETAILS</h4>
-        <h4 className="login">LOGIN</h4>
+        <Link to="/login" className="login">LOGIN</Link>
       </header>
       <div className="rectangle"></div>
     </div>
