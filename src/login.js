@@ -76,9 +76,13 @@ const Login = () => {
           name="password"
           onChange={handlePassChange}
         />
+        <p className="or"><span className="or-line">or</span></p>
+
         <button className="submit" type="submit">Log In</button>
       </form>
       <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
+      <button className="google" >  <span class="google-icon"></span>
+  Sign in with Google</button>
     </div>
     </div>
   );
