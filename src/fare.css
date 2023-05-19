@@ -1,3 +1,117 @@
 .fare{
+   
+    position: absolute;
+    width: 449px;
+    height: 50px;
+    left: 54px;
+    top: 70px;
     
+    font-family: 'Akshar';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+
+    color: #fefefe;
 }
+.rect{
+    position: absolute;
+width: 400px;
+height: 400px;
+left: 250px;
+top: 230px;
+
+background: #4179A2;
+border-radius: 30px;
+}
+.calcu{
+    position: absolute;
+width: 192px;
+height: 24px;
+left: 130px;
+top: 15px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 24px;
+
+color: #FFFFFF;
+}
+.from1{
+    position: absolute;
+width: 59px;
+height: 24px;
+left: 25px;
+top: 50px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 24px;
+
+color: #FFFFFF;
+}
+.selectfrom1{
+    
+position: absolute;
+width: 250px;
+height: 18px;
+left: 25px;
+top: 120px;
+
+background: #f9f6f6;
+border-radius: 10px;
+}
+.selectto1{
+    
+    position: absolute;
+    width: 250px;
+    height: 18px;
+    left: 25px;
+    top: 180px;
+    
+    background: #f9f6f6;
+    border-radius: 10px;
+    }
+
+    .type1{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        left: 25px;
+        top: 260px;
+        
+        background: #f9f6f6;
+        border-radius: 10px;
+
+    }
+
+    .button1{
+        position: absolute;
+        width: 150px;
+        height: 22px;
+        left: 120px;
+        top: 360px;
+        
+        background: #f9f6f6;
+        border-radius: 10px;
+    }
+    .to1{
+        position: absolute;
+width: 29px;
+height: 24px;
+left: 25px;
+top: 130px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size:13px;
+line-height: 24px;
+
+color: #FFFFFF;
+    }
