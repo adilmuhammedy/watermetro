@@ -63,19 +63,21 @@ width: 280px;
 height: 30px;
 left: 450px;
 top: 60px;
+border: none; /* Remove border */
 border-radius: 10px;
-box-shadow: #000000;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
 
 }
 .field1{
     position: absolute;
-width: 280px;
-height: 30px;
-left: 450px;
-top: 140px;
-border-radius: 10px;
-box-shadow: #000000;
+    width: 280px;
+    height: 30px;
+    left: 450px;
+    top: 140px;
+    border: none; /* Remove border */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .submit{
