@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './fare.css';
 import { useHistory } from 'react-router-dom';
+import logo from './images/logo.png';
 
 const FareDetails = (props) => {
   const history = useHistory();
@@ -17,7 +18,7 @@ const FareDetails = (props) => {
   }
 
   const handleBookTicketsClick = () => {
-    history.push(props.match.path);
+    history.push('/bookticket');
   }
 
   const handleFareDetailsClick = () => {
@@ -48,6 +49,7 @@ const FareDetails = (props) => {
   return (
     <>
       <div className="Home">
+      <img src={logo} className="logo" alt="watermetro" />
         <header className="home-header">
           <h4 className="home" onClick={handleHomeClick}>HOME</h4>
           <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
@@ -85,7 +87,7 @@ const FareDetails = (props) => {
               <option value="4">VYPIN</option>
             </select>
           </div>
-          <h4 className="tickettype1">Ticket-type</h4>
+          <h4 className="tickettype1">TICKET-TYPE</h4>
           <div className='typ'>
             <select value={ticketType} className="type1" onChange={(e) => setTicketType(e.target.value)}>
               <option value="">One-way</option>

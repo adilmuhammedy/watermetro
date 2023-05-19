@@ -62,6 +62,7 @@ const Login = () => {
   return (
 
     <div className="Home">
+      <img src={logo} className="logo" alt="watermetro" />
     <header className="home-header">
     <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>

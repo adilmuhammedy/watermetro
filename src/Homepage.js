@@ -1,6 +1,7 @@
 import React from 'react';
 import './Homepage.css';
 import { useHistory } from 'react-router-dom';
+import logo from './images/logo.png';
 
 function Home() {
   const history = useHistory();
@@ -25,6 +26,7 @@ function Home() {
 
   return (
     <div className="Home">
+      <img src={logo} className="logo" alt="watermetro" />
       <header className="home-header">
         <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>

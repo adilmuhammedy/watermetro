@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './terminals.css';
+import logo from './images/logo.png';
 
 const Terminals = () => {
   const history = useHistory();
@@ -27,6 +28,8 @@ const Terminals = () => {
   return (
     <div className="Home">
       <header className="home-header">
+      <img src={logo} className="logo" alt="watermetro" />
+
       <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>

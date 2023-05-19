@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './register.css';
+import logo from './images/logo.png';
 
 export const Register = () => {
   const [email, setEmail] = useState('');
@@ -49,6 +50,7 @@ export const Register = () => {
 
   return (
     <div className="Home">
+      <img src={logo} className="logo" alt="watermetro" />
     <header className="home-header">
     <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>

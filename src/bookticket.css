@@ -32,10 +32,10 @@
     box-sizing: border-box;
 
 position: absolute;
-width: 507px;
-height: 450px;
-left: 466px;
-top: 259px;
+width: 450px;
+height: 430px;
+left: 480px;
+top: 240px;
 
 background: #4179A2;
 border: 1px solid #000000;
@@ -44,7 +44,7 @@ border-radius: 15px;
 
   .from{
     position: absolute;
-left: 10px;
+left: 20px;
 top: 2px;
 font-family: 'Inter';
 font-style: normal;
@@ -57,7 +57,7 @@ color: #fefefe;
     position: absolute;
     top: 25px;
     width:300px;
-    left: 10px;
+    left: 20px;
   
     border-radius: 6px;
     color: #333;
@@ -67,7 +67,7 @@ color: #fefefe;
 
   .to{
     position: absolute;
-left: 10px;
+left: 20px;
 top: 70px;
 font-family: 'Inter';
 font-style: normal;
@@ -80,7 +80,7 @@ color: #fefefe;
     position: absolute;
     top: 60px;
     width:300px;
-    left: 10px;
+    left: 20px;
    
     border-radius: 4px;
     color: #333;
@@ -90,7 +90,7 @@ color: #fefefe;
 
   .tickettype{
     position: absolute;
-left: 10px;
+left: 20px;
 top: 145px;
 font-family: 'Inter';
 font-style: normal;
@@ -102,7 +102,7 @@ color: #fefefe;
   .type{
     position: absolute;
     top: 105px;
-    left: 10px;
+    left: 20px;
     width:300px;
    
     border-radius: 4px;
@@ -113,7 +113,7 @@ color: #fefefe;
 
   .nopass{
     position: absolute;
-left: 10px;
+left: 20px;
 top: 230px;
 font-family: 'Inter';
 font-style: normal;
@@ -125,21 +125,23 @@ color: #fefefe;
   .nopassfield{
     position: absolute;
     top: 60px;
-    left: 10px;
+    left: 20px;
     width:300px;
 
   }
 
-  .submit{
+  .submit1{
     position: absolute;
-width: 190px;
-height: 48px;
-left: 104px;
-top: 380px;
-
-background: #44C0AA;
-border-radius: 7px;
-cursor: pointer;
+    top: 380px;
+    left: 150px;
+    width:150px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    padding: 5px;
+    background: #44C0AA;
+    border-color:#44C0AA ;
   }
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import './bookticket.css';
 import { useHistory } from 'react-router-dom';
+import logo from './images/logo.png';
 
 const BookTicket = (props) => {
   const history = useHistory();
@@ -48,6 +49,7 @@ const BookTicket = (props) => {
 
   return (
     <div className="Home">
+      <img src={logo} className="logo" alt="watermetro" />
       <header className="home-header">
       <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
