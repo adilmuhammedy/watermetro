@@ -1,103 +1,152 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
-
-import 'firebase/auth';
+import 'firebase/compat/auth';
+import logo from './images/logo.png';
 import './login.css';
+
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPass] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(email);
-    firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Handle successful sign-in
-      console.log('User signed in:', userCredential.user);
-      // Redirect to a new page or perform any other actions
-      history.push('/dashboard'); // Replace '/dashboard' with your desired route
-    })
-    .catch((error) => {
-      // Handle sign-in error
-      console.error('Sign-in error:', error);
-      // Display an error message or perform any other error handling
-    });
-
-  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handlePassChange = (event) => {
-    setPass(event.target.value);
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
   };
+  const firebaseConfig = {
+    // Add your Firebase configuration object here
+    apiKey: "AIzaSyCGRG2r6MT-CoPN1d-UVrbwhbyWhg0VGyU",
+    authDomain: "watermetro-69ffe.firebaseapp.com",
+    projectId: "watermetro-69ffe",
+    storageBucket: "watermetro-69ffe.appspot.com",
+    messagingSenderId: "405368155649",
+    appId: "1:405368155649:web:1ffea291743d7123c7da00",
+    measurementId: "G-CREXXM61GJ"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+
+  const handleSubmit = () => {
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Handle successful login
+      const user = userCredential.user;
+      console.log('Logged in user:', user);
+    })
+    .catch((error) => {
+      // Handle login error
+      console.error('Login error:', error);
+    });
+
+  }
+  const provider = new firebase.auth.GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        // Handle successful login
+        const user = result.user;
+        console.log('Logged in user:', user);
+        // Redirect to a new page or perform any other actions
+        history.push('/dashboard');
+      })
+      .catch((error) => {
+        // Handle login error
+        console.error('Login error:', error);
+        // Display an error message or perform any other error handling
+      });
+  };
+
   const handleHomeClick = () => {
     history.push('/');
-  }
-  
+  };
+
   const handleRegisterClick = () => {
     history.push('/register');
-  }
+  };
+
   const handleFareDetailsClick = () => {
     history.push('/fare');
-  }
-
+  };
 
   const handleBookTicketsClick = () => {
     history.push('/bookticket');
-  }
+  };
 
   const handleTerminalsClick = () => {
     history.push('/terminals');
-  }
+  };
+
   const handleLoginClick = () => {
     history.push('/login');
-  }
+  };
 
   return (
-
     <div className="Home">
       <img src={logo} className="logo" alt="watermetro" />
-    <header className="home-header">
-    <h4 className="home" onClick={handleHomeClick}>HOME</h4>
-        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
-        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
-        <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
-        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
-    </header>
-    <div className="rectangle"></div>
-    <h2 className="loginhead">LOGIN</h2>
-    <div className="formcontainer">
-      <form className="loginform" onSubmit={handleSubmit}>
-        <label className="email" htmlFor="email">Email</label>
-        <input className="field"
-          value={email}
-          type="text"
-          placeholder="abc@gmail.com"
-          id="email"
-          name="email"
-          onChange={handleEmailChange}
-        />
-        <label className="password" htmlFor="password">Password</label>
-        <input className="field1"
-          value={password}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-          onChange={handlePassChange}
-        />
-        <button className="submit" type="submit">Log In</button>
-      </form>
-      <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
-    </div>
+      <header className="home-header">
+        <h4 className="home" onClick={handleHomeClick}>
+          HOME
+        </h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>
+          BOOK TICKETS
+        </h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>
+          TERMINALS
+        </h4>
+        <h4 className="faredetails" onClick={handleFareDetailsClick}>
+          FARE DETAILS
+        </h4>
+        <h4 className="login" onClick={handleLoginClick}>
+          LOGIN
+        </h4>
+      </header>
+      <div className="rectangle"></div>
+      <h2 className="loginhead">LOGIN</h2>
+      <div className="formcontainer">
+        <form className="loginform" onSubmit={handleSubmit}>
+          <label className="email" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="field"
+            value={email}
+            type="text"
+            placeholder="abc@gmail.com"
+            id="email"
+            name="email"
+            onChange={handleEmailChange}
+          />
+          <label className="password" htmlFor="password">
+            Password
+          </label>
+          <input
+            className="field1"
+            value={password}
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+            onChange={handlePasswordChange}
+          />
+          <button className="submit" type="submit">
+            Log In
+          </button>
+        </form>
+        <button className="noaccount" onClick={handleRegisterClick}>
+          New User? Register here
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default Login

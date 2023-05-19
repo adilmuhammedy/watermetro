@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import './register.css';
 import logo from './images/logo.png';
 
@@ -10,9 +12,33 @@ export const Register = () => {
   const [conpass, setConpass] = useState('');
   const history = useHistory();
 
+  const firebaseConfig = {
+    // Add your Firebase configuration object here
+    apiKey: "AIzaSyCGRG2r6MT-CoPN1d-UVrbwhbyWhg0VGyU",
+    authDomain: "watermetro-69ffe.firebaseapp.com",
+    projectId: "watermetro-69ffe",
+    storageBucket: "watermetro-69ffe.appspot.com",
+    messagingSenderId: "405368155649",
+    appId: "1:405368155649:web:1ffea291743d7123c7da00",
+    measurementId: "G-CREXXM61GJ"
+  };
+  firebase.initializeApp(firebaseConfig);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(email);
+    firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, pass)
+    .then((userCredential) => {
+      // Handle successful registration
+      const user = userCredential.user;
+      console.log('Registered user:', user);
+    })
+    .catch((error) => {
+      // Handle registration error
+      console.error('Registration error:', error);
+    });
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
