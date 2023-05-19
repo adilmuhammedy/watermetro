@@ -16,6 +16,9 @@ const BookTicket = (props) => {
   const handleBookTicketsClick = () => {
     history.push(props.match.path); // Redirect to the current location
   }
+  const handleFareDetailsClick = () => {
+    history.push('/fare');
+  }
   const handleLoginClick = () => {
     history.push('/login');
   }
@@ -49,7 +52,7 @@ const BookTicket = (props) => {
       <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
-        <h4 className="faredetails">FARE DETAILS</h4>
+        <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
       </header>
       <div className="rectangle"></div>

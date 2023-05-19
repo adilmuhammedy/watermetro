@@ -4,6 +4,8 @@ import BookTickets from './bookticket';
 import Terminals from './terminals';
 import Login from './login';
 import Register from './register';
+import FareDetails from './fare';
+
 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
         <Route path="/terminals" component={Terminals} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/fare" component={FareDetails} />
       </Switch>
     </Router>
     </>

@@ -26,6 +26,9 @@ const Login = () => {
   const handleRegisterClick = () => {
     history.push('/register');
   }
+  const handleFareDetailsClick = () => {
+    history.push('/fare');
+  }
 
 
   const handleBookTicketsClick = () => {
@@ -46,7 +49,7 @@ const Login = () => {
     <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
-        <h4 className="faredetails">FARE DETAILS</h4>
+        <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
     </header>
     <div className="rectangle"></div>
