@@ -119,11 +119,14 @@ const Login = () => {
           placeholder="********"
           id="password"
           name="password"
-          onChange={handlePassChange}
+          //onChange={handlePassChange}
         />
         <button className="submit" type="submit">Log In</button>
       </form>
+      
       <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
+      <button className="google" onClick={handleGoogleLogin}>  <span class="google-icon"></span>
+  Sign in with Google</button>
     </div>
     </div>
   );

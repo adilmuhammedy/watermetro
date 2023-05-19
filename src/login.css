@@ -195,4 +195,59 @@ color: #000000;
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .or {
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: 380px;
+    top: 270px;
+    font-family: 'Literata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #5F5A5A;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .or-line {
+    flex-grow: 1;
+    border-top: 1px solid black;
+  }
+  
+  .google {
+    position: absolute;
+    background-color: #4285F4;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    left: 560px;
+    top: 450px;
+    width:200px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .google:hover,
+  .google:focus {
+    background-color: #3367D6;
+  }
+  
+  .google .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-image: url("./images/google-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   
