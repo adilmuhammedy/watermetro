@@ -1,3 +1,20 @@
+.loginhead{
+    position: absolute;
+    width: 449px;
+    height: 50px;
+    left: 54px;
+    top: 70px;
+    
+    font-family: 'Akshar';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+
+    color: #fefefe;
+}
+
 .formcontainer,.loginform{
         display:flex;
         flex-direction:column;
@@ -6,7 +23,7 @@
 width: 189px;
 height: 70px;
 left: 73px;
-top: 130px;
+top: 120px;
 
 font-family: 'Akshar';
 font-style: normal;
@@ -86,7 +103,7 @@ width: 89px;
 height: 30px;
 left: 550px;
 top: 200px;
-
+cursor: pointer;
 font-family: 'Literata';
 font-style: normal;
 font-weight: 400;
@@ -108,7 +125,7 @@ width: 200px;
 height: 24px;
 left: 565px;
 top: 370px;
-
+cursor: pointer;
 font-family: 'Literata';
 font-style: normal;
 font-weight: 300;

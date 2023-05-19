@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import './login.css'; 
 
 const Login = () => {
@@ -13,10 +12,6 @@ const Login = () => {
     console.log(email);
   };
 
-  const handleRegisterClick = () => {
-    history.push('/register'); // Assuming '/register' is the path for the register page
-  };
-
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -24,20 +19,39 @@ const Login = () => {
   const handlePassChange = (event) => {
     setPass(event.target.value);
   };
+  const handleHomeClick = () => {
+    history.push('/');
+  }
+  
+  const handleRegisterClick = () => {
+    history.push('/register');
+  }
+
+
+  const handleBookTicketsClick = () => {
+    history.push('/bookticket');
+  }
+
+  const handleTerminalsClick = () => {
+    history.push('/terminals');
+  }
+  const handleLoginClick = () => {
+    history.push('/login');
+  }
 
   return (
 
     <div className="Home">
     <header className="home-header">
-      <h4 className="home">HOME</h4>
-      <Link to="/book-tickets" className="booktickets">BOOK TICKETS</Link>
-      <h4 className="terminals">TERMINALS</h4>
-      <h4 className="faredetails">FARE DETAILS</h4>
-      <Link to="/login" className="login">LOGIN</Link>
+    <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
+        <h4 className="faredetails">FARE DETAILS</h4>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
     </header>
     <div className="rectangle"></div>
-
-    <div className="formcontainer">LOGIN
+    <h2 className="loginhead">LOGIN</h2>
+    <div className="formcontainer">
       <form className="loginform" onSubmit={handleSubmit}>
         <label className="email" htmlFor="email">Email</label>
         <input className="field"
@@ -59,7 +73,7 @@ const Login = () => {
         />
         <button className="submit" type="submit">Log In</button>
       </form>
-      <button className="noaccount"onClick={handleRegisterClick}>New User? Register here</button>
+      <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
     </div>
     </div>
   );

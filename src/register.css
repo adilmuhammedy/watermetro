@@ -1,3 +1,20 @@
+.registerhead{
+  position: absolute;
+  width: 449px;
+  height: 50px;
+  left: 54px;
+  top: 70px;
+  
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 70px;
+  letter-spacing: 0.05em;
+
+  color: #fefefe;
+}
+
 .formcontainer,
 .registerform {
   display: flex;
@@ -143,7 +160,7 @@ font-weight: 400;
 font-size: 15px;
 line-height: 30px;
 /* identical to box height */
-
+cursor: pointer;
 letter-spacing: 0.05em;
 
 color: #FFFFFF;
@@ -160,7 +177,7 @@ background-color: #44C0AA;
     height: 24px;
     left: 565px;
     top: 490px;
-    
+    cursor: pointer;
     font-family: 'Literata';
     font-style: normal;
     font-weight: 300;

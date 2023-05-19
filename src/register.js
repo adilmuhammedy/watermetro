@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import './register.css';
 
 export const Register = () => {
@@ -29,23 +28,36 @@ export const Register = () => {
     setConpass(event.target.value);
   };
 
+  
+  const handleHomeClick = () => {
+    history.push('/');
+  }
+
+  const handleBookTicketsClick = () => {
+    history.push('/bookticket');
+  }
+
+  const handleTerminalsClick = () => {
+    history.push('/terminals');
+  }
   const handleLoginClick = () => {
-    history.push('/login'); 
-  };
+    history.push('/login');
+  }
+
 
   return (
     <div className="Home">
     <header className="home-header">
-      <h4 className="home">HOME</h4>
-      <Link to="/book-tickets" className="booktickets">BOOK TICKETS</Link>
-      <h4 className="terminals">TERMINALS</h4>
-      <h4 className="faredetails">FARE DETAILS</h4>
-      <Link to="/login" className="login">LOGIN</Link>
+    <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
+        <h4 className="faredetails">FARE DETAILS</h4>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
     </header>
     <div className="rectangle"></div>
 
-
-    <div className="formcontainer">REGISTER
+    <h2 className="registerhead">REGISTER</h2>
+    <div className="formcontainer">
       <form className="registerform" onSubmit={handleSubmit}>
         <label className="name" htmlFor="name">Full name</label>
 

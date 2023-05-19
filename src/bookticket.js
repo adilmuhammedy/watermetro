@@ -1,22 +1,63 @@
 import React from 'react';
 import './bookticket.css';
+import { useHistory } from 'react-router-dom';
 
-function BookTicket() {
-    return (
-        <div className="Home">
-        <header className="home-header">
-          <h4 className="home">HOME</h4>
-          <h4 className="booktickets">BOOK TICKETS</h4>
-          <h4 className="terminals">TERMINALS</h4>
-          <h4 className="faredetails">FARE DETAILS</h4>
-          <h4 className="login">LOGIN</h4>
-        </header>
-        <div className="rectangle">
-     
-        </div>
-        <h2 className="book1">BOOK TICKETS</h2>
-        <div className="bookfrom">
-          <h4 className="from">FROM</h4>
+const BookTicket = (props) => {
+  const history = useHistory();
+
+  const handleHomeClick = () => {
+    history.push('/');
+  }
+
+  const handleTerminalsClick = () => {
+    history.push('/terminals');
+  }
+
+  const handleBookTicketsClick = () => {
+    history.push(props.match.path); // Redirect to the current location
+  }
+  const handleLoginClick = () => {
+    history.push('/login');
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Perform your submit logic here
+    // You can access the form values using event.target
+    const from = event.target.from.value;
+    const to = event.target.to.value;
+    const ticketType = event.target.ticketType.value;
+    const passengerCount = event.target.passengerCount.value;
+
+    // Example: Display the form values
+    console.log('From:', from);
+    console.log('To:', to);
+    console.log('Ticket Type:', ticketType);
+    console.log('Passenger Count:', passengerCount);
+
+    // Reset the form
+    event.target.reset();
+
+    // Redirect to the current location
+    history.push(props.match.path);
+  }
+
+  return (
+    <div className="Home">
+      <header className="home-header">
+      <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
+        <h4 className="faredetails">FARE DETAILS</h4>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
+      </header>
+      <div className="rectangle"></div>
+      <h2 className="book1">BOOK TICKETS</h2>
+
+      <div className="bookfrom">
+        <form onSubmit={handleSubmit}>
+        <h4 className="from">FROM</h4>
           <div className='selectfrom'>
           <select value="from" className="selectfrom">
           <option value="SELECT">----SELECT----</option>
@@ -47,15 +88,11 @@ function BookTicket() {
           <div className='nopassfield'>
           <input type="text" placeholder="No.of Passengers" className="nopass"/>
           </div>
-          <button type="submit" className="submit">Submit</button>
-
-
-          </div>
-
+          <button type="submit" className="submit1 ">Submit</button>
+        </form>
       </div>
-    )
+    </div>
+  );
 }
-
-
 
 export default BookTicket;
