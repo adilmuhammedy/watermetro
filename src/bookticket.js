@@ -25,7 +25,7 @@ const BookTicket = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     // Perform your submit logic here
     // You can access the form values using event.target
     const from = event.target.from.value;

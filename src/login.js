@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './login.css'; 
+import firebase from 'firebase/compat/app';
 
+import 'firebase/auth';
+import './login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+  const [password, setPass] = useState('');
   const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(email);
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Handle successful sign-in
+      console.log('User signed in:', userCredential.user);
+      // Redirect to a new page or perform any other actions
+      history.push('/dashboard'); // Replace '/dashboard' with your desired route
+    })
+    .catch((error) => {
+      // Handle sign-in error
+      console.error('Sign-in error:', error);
+      // Display an error message or perform any other error handling
+    });
+
   };
 
   const handleEmailChange = (event) => {
@@ -67,7 +84,7 @@ const Login = () => {
         />
         <label className="password" htmlFor="password">Password</label>
         <input className="field1"
-          value={pass}
+          value={password}
           type="password"
           placeholder="********"
           id="password"
