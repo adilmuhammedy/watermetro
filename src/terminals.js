@@ -9,18 +9,26 @@ const Terminals = () => {
     history.push('/');
   }
 
-  const handleBookTicketClick = () => {
+  const handleBookTicketsClick = () => {
     history.push('/bookticket');
   }
+
+  const handleTerminalsClick = () => {
+    history.push('/terminals');
+  }
+  const handleLoginClick = () => {
+    history.push('/login');
+  }
+
 
   return (
     <div className="Home">
       <header className="home-header">
-        <h4 className="home" onClick={handleHomeClick}>HOME</h4>
-        <h4 className="booktickets" onClick={handleBookTicketClick}>BOOK TICKETS</h4>
-        <h4 className="terminals" onClick={() => history.push('/terminals')}>TERMINALS</h4>
+      <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails">FARE DETAILS</h4>
-        <h4 className="login">LOGIN</h4>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">TERMINALS</h2>

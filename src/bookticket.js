@@ -16,6 +16,9 @@ const BookTicket = (props) => {
   const handleBookTicketsClick = () => {
     history.push(props.match.path); // Redirect to the current location
   }
+  const handleLoginClick = () => {
+    history.push('/login');
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,11 +46,11 @@ const BookTicket = (props) => {
   return (
     <div className="Home">
       <header className="home-header">
-        <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+      <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails">FARE DETAILS</h4>
-        <h4 className="login">LOGIN</h4>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">BOOK TICKETS</h2>
@@ -85,7 +88,7 @@ const BookTicket = (props) => {
           <div className='nopassfield'>
           <input type="text" placeholder="No.of Passengers" className="nopass"/>
           </div>
-          <button type="submit" className="submit">Submit</button>
+          <button type="submit" className="submit1 ">Submit</button>
         </form>
       </div>
     </div>

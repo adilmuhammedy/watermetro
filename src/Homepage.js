@@ -16,6 +16,9 @@ function Home() {
   const handleTerminalsClick = () => {
     history.push('/terminals');
   }
+  const handleLoginClick = () => {
+    history.push('/login');
+  }
 
   return (
     <div className="Home">
@@ -24,7 +27,7 @@ function Home() {
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails">FARE DETAILS</h4>
-        <Link to="/login" className="login">LOGIN</Link>
+        <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
       </header>
       <div className="rectangle"></div>
     </div>
