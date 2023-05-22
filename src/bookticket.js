@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './bookticket.css';
 import { useHistory } from 'react-router-dom';
 import logo from './images/logo.png';
-//import QRCode from 'qrcode.react';
+import QRCode from 'qrcode.react';
 
 const BookTicket = (props) => {
   const history = useHistory();
- // const [qrCodeData, setQRCodeData] = useState(null);
+  const [qrCodeData, setQRCodeData] = useState(null);
   const [selectedFrom, setSelectedFrom] = useState("SELECT");
   const [selectedTo, setSelectedTo] = useState("SELECT");
   const [selectedType, setSelectedType] = useState("");
@@ -84,17 +84,15 @@ const BookTicket = (props) => {
       setSelectedType("");
       setPassengerCount("");
 
+
       // Redirect to the current location
       history.push(props.match.path);
-      
-
-      
             // Parse the response JSON
-           // console.log("Response:", response);
-           // const responseData = await response.json();
+           console.log("Response:", response);
+           const responseData = await response.json();
 
             // Set the QR code data
-            //setQRCodeData(responseData.qrCode);
+            setQRCodeData(responseData.qrCode);
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -104,6 +102,7 @@ const BookTicket = (props) => {
     <div className="Home">
       <img src={logo} className="logo" alt="watermetro" />
       <header className="home-header">
+      
         <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
@@ -156,6 +155,15 @@ const BookTicket = (props) => {
           <button type="submit" className="submit1">Submit</button>
         </form>
       </div>
+      <div classsName="qr">
+      {/* Other JSX code */}
+      {qrCodeData && (
+        <div className="qr-container">
+          <h2>QR Code</h2>
+          <QRCode value={qrCodeData} />
+        </div>
+      )}
+    </div>
     </div>
   );
 }
