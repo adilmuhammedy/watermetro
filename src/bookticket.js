@@ -19,6 +19,9 @@ const BookTicket = (props) => {
   const handleTerminalsClick = () => {
     history.push('/terminals');
   }
+  const handleConfirmClick = () => {
+    history.push('/confirmation');
+  }
 
   const handleBookTicketsClick = () => {
     history.push(props.match.path);
@@ -108,6 +111,7 @@ const BookTicket = (props) => {
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
+        <h4 className="login" onClick={handleConfirmClick}>CONFIRM</h4>
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">BOOK TICKETS</h2>

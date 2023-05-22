@@ -96,6 +96,9 @@ const FareDetails = (props) => {
           </div>
           <button className="button1"type="submit">Submit</button>
         </form>
+        <div className="recta">
+
+        </div>
       </div>
     </>
   );
