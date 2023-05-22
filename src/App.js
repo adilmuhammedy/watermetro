@@ -5,6 +5,7 @@ import Terminals from './terminals';
 import Login from './login';
 import Register from './register';
 import FareDetails from './fare';
+import Confirmation from './confirmation';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/fare" component={FareDetails} />
+        <Route path="/confirmation" component={Confirmation}/>
       </Switch>
     </Router>
     </>

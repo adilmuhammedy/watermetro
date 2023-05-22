@@ -127,6 +127,15 @@ color: #fefefe;
     top: 60px;
     left: 20px;
     width:300px;
+    color: #000000;
+
+  }
+  .nopasslist{
+    position:absolute;
+    top: 230px;
+    left:20px;
+    width: 200px;
+    height:24px;
 
   }
 

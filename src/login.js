@@ -15,7 +15,7 @@ const Login = () => {
     setEmail(event.target.value);
   };
 
-  const handlePasswordChange = (event) => {
+  const handlePassChange = (event) => {
     setPassword(event.target.value);
   };
   const firebaseConfig = {
@@ -119,11 +119,13 @@ const Login = () => {
           placeholder="********"
           id="password"
           name="password"
-          //onChange={handlePassChange}
+          onChange={handlePassChange}
         />
         <button className="submit" type="submit">Log In</button>
       </form>
+      <p className="or"><span className="or-line">OR</span></p>
       
+
       <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
       <button className="google" onClick={handleGoogleLogin}>  <span class="google-icon"></span>
   Sign in with Google</button>

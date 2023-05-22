@@ -13,6 +13,9 @@ const BookTicket = (props) => {
   const handleTerminalsClick = () => {
     history.push('/terminals');
   }
+  const handleConfirmClick = () => {
+    history.push('/confirmation');
+  }
 
   const handleBookTicketsClick = () => {
     history.push(props.match.path); // Redirect to the current location
@@ -56,6 +59,7 @@ const BookTicket = (props) => {
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
+        <h4 className="login" onClick={handleConfirmClick}>CONFIRM</h4>
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">BOOK TICKETS</h2>
@@ -64,7 +68,7 @@ const BookTicket = (props) => {
         <form onSubmit={handleSubmit}>
         <h4 className="from">FROM</h4>
           <div className='selectfrom'>
-          <select value="from" className="selectfrom">
+          <select defaultValue="select" className="selectfrom">
           <option value="SELECT">----SELECT----</option>
           <option value="1">KAKKANAD</option>
           <option value="2">VYTTILA</option>
@@ -74,7 +78,7 @@ const BookTicket = (props) => {
           </div>
           <h4 className="to">TO</h4>
           <div className='selectto'>
-          <select value="to" className="selectto">
+          <select defaultValue="select" className="selectto">
           <option value="SELECT">----SELECT----</option>
           <option value="1">KAKKANAD</option>
           <option value="2">VYTTILA</option>
@@ -84,14 +88,14 @@ const BookTicket = (props) => {
           </div>
           <h4 className="tickettype">Ticket-type</h4>
           <div className='type'>
-          <select value="Ticket-type" className="type">
+          <select defaultValue="select" className="type">
           <option value="">One-way</option>
           <option value="option1">Two-way</option>
           </select>
           </div>
           <h4 className="nopass">No.of Passengers</h4>
           <div className='nopassfield'>
-          <input type="text" placeholder="No.of Passengers" className="nopass"/>
+          <input className="nopasslist "type="number" placeholder="No.of Passengers"/>
           </div>
           <button type="submit" className="submit1 ">Submit</button>
         </form>
