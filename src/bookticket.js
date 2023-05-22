@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './bookticket.css';
 import { useHistory } from 'react-router-dom';
 import logo from './images/logo.png';
+//import QRCode from 'qrcode.react';
 
 const BookTicket = (props) => {
   const history = useHistory();
+ // const [qrCodeData, setQRCodeData] = useState(null);
+  const [selectedFrom, setSelectedFrom] = useState("SELECT");
+  const [selectedTo, setSelectedTo] = useState("SELECT");
+  const [selectedType, setSelectedType] = useState("");
+  const [passengerCount, setPassengerCount] = useState("");
 
   const handleHomeClick = () => {
     history.push('/');
@@ -18,43 +24,90 @@ const BookTicket = (props) => {
   }
 
   const handleBookTicketsClick = () => {
-    history.push(props.match.path); // Redirect to the current location
+    history.push(props.match.path);
   }
+
   const handleFareDetailsClick = () => {
     history.push('/fare');
   }
+
   const handleLoginClick = () => {
     history.push('/login');
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleFromChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedFrom(selectedValue);
+  };
   
-    // Perform your submit logic here
-    // You can access the form values using event.target
-    const from = event.target.from.value;
-    const to = event.target.to.value;
-    const ticketType = event.target.ticketType.value;
-    const passengerCount = event.target.passengerCount.value;
+  const handleToChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedTo(selectedValue);
+  };
 
-    // Example: Display the form values
-    console.log('From:', from);
-    console.log('To:', to);
-    console.log('Ticket Type:', ticketType);
-    console.log('Passenger Count:', passengerCount);
+  const handleTypeChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedType(selectedValue);
+  };
 
-    // Reset the form
-    event.target.reset();
+  const handlePassengerCountChange = (event) => {
+    const count = event.target.value;
+    setPassengerCount(count);
+  };
 
-    // Redirect to the current location
-    history.push(props.match.path);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Create request body
+    const requestBody = {
+      from: selectedFrom,
+      to: selectedTo,
+      ticketType: selectedType,
+      passengerCount
+    };
+
+    console.log("Form Data:", requestBody);
+ 
+    try {
+      // Make API call to the backend
+      const response = await fetch('http://localhost:4000/bookticket', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      });
+      console.log("Response:", response);
+
+   
+  
+      // Reset the form
+      setSelectedFrom("SELECT");
+      setSelectedTo("SELECT");
+      setSelectedType("");
+      setPassengerCount("");
+
+      // Redirect to the current location
+      history.push(props.match.path);
+      
+
+      
+            // Parse the response JSON
+           // console.log("Response:", response);
+           // const responseData = await response.json();
+
+            // Set the QR code data
+            //setQRCodeData(responseData.qrCode);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   }
 
   return (
     <div className="Home">
       <img src={logo} className="logo" alt="watermetro" />
       <header className="home-header">
-      <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="home" onClick={handleHomeClick}>HOME</h4>
         <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
@@ -65,39 +118,46 @@ const BookTicket = (props) => {
       <h2 className="book1">BOOK TICKETS</h2>
 
       <div className="bookfrom">
-        <form onSubmit={handleSubmit}>
-        <h4 className="from">FROM</h4>
+        <form action="#" onSubmit={handleSubmit}>
+          <h4 className="from">FROM</h4>
           <div className='selectfrom'>
-          <select defaultValue="select" className="selectfrom">
-          <option value="SELECT">----SELECT----</option>
-          <option value="1">KAKKANAD</option>
-          <option value="2">VYTTILA</option>
-          <option value="3">HIGHCOURT</option>
-          <option value="4">VYPIN</option>
-          </select>
+            <select value={selectedFrom} onChange={handleFromChange} className="selectfrom">
+              <option value="SELECT">----SELECT----</option>
+              <option value="1">KAKKANAD</option>
+              <option value="2">VYTTILA</option>
+              <option value="3">HIGHCOURT</option>
+              <option value="4">VYPIN</option>
+            </select>
           </div>
           <h4 className="to">TO</h4>
           <div className='selectto'>
-          <select defaultValue="select" className="selectto">
-          <option value="SELECT">----SELECT----</option>
-          <option value="1">KAKKANAD</option>
-          <option value="2">VYTTILA</option>
-          <option value="3">HIGHCOURT</option>
-          <option value="4">VYPIN</option>
-          </select>
+            <select value={selectedTo} onChange={handleToChange} className="selectto">
+              <option value="SELECT">----SELECT----</option>
+              <option value="1">KAKKANAD</option>
+              <option value="2">VYTTILA</option>
+              <option value="3">HIGHCOURT</option>
+              <option value="4">VYPIN</option>
+            </select>
           </div>
           <h4 className="tickettype">Ticket-type</h4>
           <div className='type'>
-          <select defaultValue="select" className="type">
-          <option value="">One-way</option>
-          <option value="option1">Two-way</option>
-          </select>
+            <select value={selectedType} onChange={handleTypeChange} className="type">
+            <option value="">SELECT</option>
+              <option value="1">One-way</option>
+              <option value="2">Two-way</option>
+            </select>
           </div>
           <h4 className="nopass">No.of Passengers</h4>
-          <div className='nopassfield'>
-          <input className="nopasslist "type="number" placeholder="No.of Passengers"/>
-          </div>
-          <button type="submit" className="submit1 ">Submit</button>
+
+            <input 
+              type="number"
+              placeholder="No.of Passengers"
+              className="nopasslist"
+              value={passengerCount}
+              onChange={handlePassengerCountChange}
+            />
+       
+          <button type="submit" className="submit1">Submit</button>
         </form>
       </div>
     </div>

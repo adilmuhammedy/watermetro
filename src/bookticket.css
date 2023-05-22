@@ -120,24 +120,24 @@ font-style: normal;
 font-weight: 500;
 font-size: 15px;
 line-height: 24px;
-color: #fefefe;
+color: #ffffff; /* Set the font color to white */
   }
   .nopassfield{
     position: absolute;
     top: 60px;
     left: 20px;
     width:300px;
-    color: #000000;
-
+    background-color: #000000;
+    color: #040000; /* Set the font color to white */
   }
   .nopasslist{
-    position:absolute;
-    top: 230px;
-    left:20px;
-    width: 200px;
-    height:24px;
-
-  }
+    color:#000000;
+    position: absolute;
+    top:280px;
+    left: 40px;
+    width:200px;
+    height: 24px;
+    }
 
   .submit1{
     position: absolute;
