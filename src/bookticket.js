@@ -19,9 +19,7 @@ const BookTicket = (props) => {
   const handleTerminalsClick = () => {
     history.push('/terminals');
   }
-  const handleConfirmClick = () => {
-    history.push('/confirmation');
-  }
+
 
   const handleBookTicketsClick = () => {
     history.push(props.match.path);
@@ -57,16 +55,34 @@ const BookTicket = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+ 
 
     // Create request body
     const requestBody = {
       from: selectedFrom,
       to: selectedTo,
       ticketType: selectedType,
-      passengerCount
+      nopass: passengerCount,
     };
+    var from=requestBody.from;
+   var to=requestBody.to;
+    var ticketType=requestBody.ticketType;
+    var nopass=requestBody.nopass;
 
-    console.log("Form Data:", requestBody);
+    if(from==='SELECT' ||to==='SELECT' || ticketType==='' || nopass===''){
+      alert("Please fill all the fields");
+      return;
+    }
+    if(from===to){
+      alert('Please select different stations' );
+    }
+    if(!(from==="kakkanad" && to==="vyttila")||(from==="vyttila" && to==="kakkanad")||(from==="highcourt" && to==="vypin")||(from==="vypin" && to==="highcourt")){
+      alert( 'Provided route is not available, sorry!');
+      return;
+    }
+
+
+    //console.log("Form Data:", requestBody);
  
     try {
       // Make API call to the backend
@@ -111,7 +127,7 @@ const BookTicket = (props) => {
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
-        <h4 className="login" onClick={handleConfirmClick}>CONFIRM</h4>
+        <h4 className="login" >CONFIRM</h4>
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">BOOK TICKETS</h2>
@@ -122,20 +138,20 @@ const BookTicket = (props) => {
           <div className='selectfrom'>
             <select value={selectedFrom} onChange={handleFromChange} className="selectfrom">
               <option value="SELECT">----SELECT----</option>
-              <option value="1">KAKKANAD</option>
-              <option value="2">VYTTILA</option>
-              <option value="3">HIGHCOURT</option>
-              <option value="4">VYPIN</option>
+              <option value="kakkanad">KAKKANAD</option>
+              <option value="vyttila">VYTTILA</option>
+              <option value="highcourt">HIGHCOURT</option>
+              <option value="vypin">VYPIN</option>
             </select>
           </div>
           <h4 className="to">TO</h4>
           <div className='selectto'>
             <select value={selectedTo} onChange={handleToChange} className="selectto">
               <option value="SELECT">----SELECT----</option>
-              <option value="1">KAKKANAD</option>
-              <option value="2">VYTTILA</option>
-              <option value="3">HIGHCOURT</option>
-              <option value="4">VYPIN</option>
+              <option value="kakkanad">KAKKANAD</option>
+              <option value="vyttila">VYTTILA</option>
+              <option value="highcourt">HIGHCOURT</option>
+              <option value="vypin">VYPIN</option>
             </select>
           </div>
           <h4 className="tickettype">Ticket-type</h4>
