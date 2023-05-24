@@ -2,9 +2,14 @@ import React from 'react';
 import './confirmation.css';
 import { useHistory } from 'react-router-dom';
 import logo from './images/logo.png';
+import { useLocation } from 'react-router-dom';
+import  { useEffect, useState } from 'react';
+
+
 
     const Confirmation = (props) => {
     const history = useHistory();
+    const [fare, setFare] = useState(null);
   
     const handleHomeClick = () => {
       history.push('/');
@@ -23,6 +28,46 @@ import logo from './images/logo.png';
     const handleLoginClick = () => {
       history.push('/login');
     }
+
+
+    const location = useLocation();
+const { from, to, ticketType, nopass } = location.state  || {};
+console.log('Form Values in confirm page:', from, to, ticketType, nopass);
+
+useEffect(() => {
+  const fetchFareData = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/confirmation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ from, to, ticketType, nopass })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const { fare } = data;
+        setFare(fare);
+      } else {
+        console.error('Error fetching fare data:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching fare data:', error);
+    }
+  };
+
+  fetchFareData();
+}, []);
+
+console.log('Fare:', fare);
+
+
+
+// Parse JSON request bodies
+
+  
+
   
     return (
       <div className="Home">
@@ -37,18 +82,13 @@ import logo from './images/logo.png';
         <div className="rectangle"></div>
         <div className="rectan">
         <h2 className="ticket">TICKET DETAILS</h2>
-        <h4 className="boarding">📍 Kakkanad</h4>
-        <h4 className="destination">📍 Vyttila</h4>  
-        <h4 className="deep">departing time:09:00</h4>
-        <h4 className="arri">arriving time:10:00</h4>
-        <h4 className="duration">Duration:20 mins</h4>
-        <h4 className="fares">TICKET FARE:20 rs</h4>
+        <h4 className="boarding" id="depart">📍 {from}</h4>
+        <h4 className="destination" id="arrive">📍{to}</h4>  
+        <h4 className="deep">departing time: 00:00</h4>
+       <h4 className="arri">arriving time: 00:00</h4>
+        <h4 className="duration">Total passengers:{nopass}</h4>
+        <h4 className="fares">Ticket Fare: {fare} rs</h4>
         <button type="submit" className="sub">Confirm</button>
-
-
-
-
-        
       </div>
   
     </div>
@@ -57,36 +97,3 @@ import logo from './images/logo.png';
 }                                                                      
 
 export default Confirmation;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

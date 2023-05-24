@@ -200,5 +200,12 @@ color: #ffffff; /* Set the font color to white */
     
     background: #44C0AA;
   }
+
+
+  .qr-container {
+    display: flex;
+    position: absolute;
+    top: 400px;
+    left: 80px;
   
-  
+  }
