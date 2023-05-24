@@ -4,6 +4,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import logo from './images/logo.png';
 import './login.css';
+import avatar from './avatar.png'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,13 +13,18 @@ const Login = () => {
 
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
+
+
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
+  
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
 
   const handlePassChange = (event) => {
     setPassword(event.target.value);
@@ -97,6 +103,7 @@ const Login = () => {
 
   return (
     <div className="Home">
+
       <img src={logo} className="logo" alt="watermetro" />
     <header className="home-header">
     <h4 className="home" onClick={handleHomeClick}>HOME</h4>
@@ -135,18 +142,17 @@ const Login = () => {
   Sign in with Google</button>
 
       </div>
-      <div className="user-dropdown">
-        <div className="user-icon" onClick={toggleDropdown}>
-          <i className="fas fa-user"></i>
-        </div>
-        {showDropdown && (
-          <div className="dropdown-content">
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
-            <a href="#">Logout</a>
-          </div>
+      <div className="dropdown">
+        <button onClick={toggleDropdown}>  <img src={avatar} alt="Avatar" class="avatar"></img></button>
+        {isOpen && (
+          <ul className="dropdown-menu">
+            <li>Account</li>
+            <li>Settings</li>
+            <li>Logout</li>
+          </ul>
         )}
       </div>
+
     </div>
  
   );
