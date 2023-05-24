@@ -8,8 +8,7 @@ import './login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
-
+  const history = useHistory(); 
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -89,6 +88,7 @@ const Login = () => {
     history.push('/login');
   };
 
+
   return (
     <div className="Home">
       <img src={logo} className="logo" alt="watermetro" />
@@ -129,9 +129,10 @@ const Login = () => {
       <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
       <button className="google" onClick={handleGoogleLogin}>  <span class="google-icon"></span>
   Sign in with Google</button>
-    </div>
+
+      </div>
     </div>
   );
 };
-
-export default Login
+  
+export default Login;
