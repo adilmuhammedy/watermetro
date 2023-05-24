@@ -1,3 +1,8 @@
+.Home{
+  position: absolute;
+  width:850px;
+  height:100%;
+}
 
 .home{
 
@@ -65,3 +70,152 @@ top: -26px;
   background: #44C0AA;
   
 }
+.homepagee{
+  position: relative;
+  top:120px;
+  width:100%;
+}
+.metro{
+  position:relative;
+  left:30px;
+  color:#44C0AA;
+  font:inherit;
+  font-size: 22px;
+  font-family: 'Lato', sans-serif;
+
+  text-shadow: #0d0f0f;
+
+}
+.heading{
+  position:relative;
+  left:30px;
+  color:#1289c0;
+  font:inherit;
+  font-family: 'Lato', sans-serif;
+
+  top:-20px;
+  width:550px;
+  font-size: 1.675rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  
+
+}
+.descri{
+  position: relative;
+  top:-30px;
+  left:30px;
+  width:650px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.boat{
+  position:absolute;
+  width:800px;
+  height:100px;
+  top:230px;
+  left:100px;
+  text-shadow: #0d0f0f;
+  color:#1289c0;
+  font-size: 28px;background: linear-gradient(180deg, #0660b4, #15bbb0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+}
+.route{
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:230px;
+  left:250px;
+  text-shadow: #0d0f0f;
+  color:#1289c0;
+  font-size: 28px;
+  background: linear-gradient(140deg, #065cad, #15bbb0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.kms{
+  position:absolute;
+  width:160px;
+  height:100px;
+  top:230px;
+  left:400px;
+  text-shadow: #0d0f0f;
+  color:#1289c0;
+  font-size: 28px;
+  background: linear-gradient(140deg, #04539d, #15bbb0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   
+
+  
+}
+
+.slide-container {
+  position: relative;
+  width: 80%;
+  left:640px; 
+  height:440px;
+  float:right;
+  margin-top: -140px;
+  border-radius: 20px;
+}
+
+.slide-container .each-slide {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.wave-animation {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 1400px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.wave-animation path {
+  fill: #93DCEC;
+  animation: waveFlow 8s linear infinite;
+}
+
+@keyframes waveFlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.wave-animation2 {
+  position: absolute;
+  top:660px;
+  left: 0;
+  width: 1500px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.wave-animation2 path {
+  fill: #64c3d87a;
+  animation: waveFlow 5s linear infinite;
+}
+
+@keyframes waveFlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
