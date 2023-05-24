@@ -199,7 +199,11 @@ color: #000000;
   
   .google:hover,
   .google:focus {
-    background-color: #3367D6;
+    background-color: #d3bc89;
+    /* Add more styles for hover and focus states */
+    color: #fff;
+    /* Additional styles */
+    border-radius: 4px;
   }
   
   .google .google-icon {
@@ -260,7 +264,7 @@ color: #000000;
   
   .dropdown-content a {
     display: block;
-    padding: 10px;
+    padding: 15px;
     text-decoration: none;
     color: #000;
   }

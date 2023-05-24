@@ -10,6 +10,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const history = useHistory(); 
 
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -124,14 +130,25 @@ const Login = () => {
         <button className="submit" type="submit">Log In</button>
       </form>
       <p className="or"><span className="or-line">OR</span></p>
-      
-
       <button className="noaccount" onClick={handleRegisterClick}>New User? Register here</button>
       <button className="google" onClick={handleGoogleLogin}>  <span class="google-icon"></span>
   Sign in with Google</button>
 
       </div>
+      <div className="user-dropdown">
+        <div className="user-icon" onClick={toggleDropdown}>
+          <i className="fas fa-user"></i>
+        </div>
+        {showDropdown && (
+          <div className="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+          </div>
+        )}
+      </div>
     </div>
+ 
   );
 };
   

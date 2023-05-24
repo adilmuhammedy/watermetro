@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Home from './Homepage';
 import BookTickets from './bookticket';
 import Terminals from './terminals';
@@ -10,6 +11,9 @@ import Confirmation from './confirmation';
 
 
 function App() {
+  useEffect(() => {
+    document.title = 'Water-Metro'; // Set the desired tab name
+  }, []); 
   return (
     <><Router>
       <Switch>
