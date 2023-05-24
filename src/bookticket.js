@@ -54,8 +54,10 @@ const BookTicket = (props) => {
   };
 
   const handleSubmit = async (event) => {
+    
     event.preventDefault();
  
+
 
     // Create request body
     const requestBody = {
@@ -69,20 +71,41 @@ const BookTicket = (props) => {
     var ticketType=requestBody.ticketType;
     var nopass=requestBody.nopass;
 
+    let isValid = true;
     if(from==='SELECT' ||to==='SELECT' || ticketType==='' || nopass===''){
       alert("Please fill all the fields");
-      return;
+      isValid = false;
+    
+      
     }
-    if(from===to){
+    else if(from===to){
       alert('Please select different stations' );
+      isValid = false;
     }
-    if(!(from==="kakkanad" && to==="vyttila")||(from==="vyttila" && to==="kakkanad")||(from==="highcourt" && to==="vypin")||(from==="vypin" && to==="highcourt")){
-      alert( 'Provided route is not available, sorry!');
-      return;
+    else if(!(
+      (from==="kakkanad" && to==="vyttila")||
+      (from==="vyttila" && to==="kakkanad")||
+      (from==="highcourt" && to==="vypin")||
+      (from==="vypin" && to==="highcourt"))){
+      alert( 'Selected route is not available, sorry!');
+      isValid = false;
+    
     }
 
-
-    //console.log("Form Data:", requestBody);
+    else if (parseInt(passengerCount) < 1) {
+      alert('Number of passengers cannot be negative or zero');
+      isValid = false;
+    }
+    else{
+    history.push({
+      pathname: '/confirmation',
+      state: {
+        from: selectedFrom,
+        to: selectedTo,
+        ticketType: selectedType,
+        nopass: passengerCount
+      }
+    });
  
     try {
       // Make API call to the backend
@@ -94,16 +117,11 @@ const BookTicket = (props) => {
         body: JSON.stringify(requestBody)
       });
       console.log("Response:", response);
-
-   
-  
       // Reset the form
       setSelectedFrom("SELECT");
       setSelectedTo("SELECT");
       setSelectedType("");
       setPassengerCount("");
-
-
       // Redirect to the current location
       history.push(props.match.path);
             // Parse the response JSON
@@ -115,6 +133,11 @@ const BookTicket = (props) => {
     } catch (error) {
       console.error('Error submitting form:', error);
     }
+      history.push('/confirmation');
+  }
+    
+    
+  
   }
 
   return (
@@ -127,7 +150,7 @@ const BookTicket = (props) => {
         <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
         <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
         <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
-        <h4 className="login" >CONFIRM</h4>
+    
       </header>
       <div className="rectangle"></div>
       <h2 className="book1">BOOK TICKETS</h2>
