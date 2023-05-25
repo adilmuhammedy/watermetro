@@ -136,197 +136,69 @@ color: #FFFFFF;
     
     color: #FFFFFF;
 }
-.recta{
-    box-sizing: border-box;
+  /* DropdownButton.css */
 
-position: absolute;
-width: 850px;
-height: 230px;
-left: 500px;
-top: 80px;
-
-border: none; /* Remove border */
-border-radius: 10px;
-box-shadow: 0 2px 5px rgba(5, 5, 5, 0.3);
-}
-.metro9{
-    position:relative;
-    
-    left:20px;
-    color:#030303c6;
-  font:200;
-  font-size: 18px;
-  font-family: 'Lato', sans-serif;
-}
-.logo1{
-    position: absolute;
-    width:120px;
-    height:120px;
-    left:30px;
-    top:25px;
-}
-.place{
-    position:relative;
-    top:70px;
-    left:20px;
-    font-family: unset;
-    font-size: 17px;
-}
-.place1{
-    position:relative;
-    top:35px;
-    left:750px;
-    font-family: unset;
-    font-size: 17px;
-}
-.symbol8{
-    position: absolute;
-    top:130px;
-    left:328px;
-    width:170px;
-    height:40px;
-}
-.time{
-    position:relative;
-    top:30px;
-    left:20px;
-    font-family: unset;
-    font-size: 14px;
-}
-.rupee{
-    position: absolute;
-    left:1255px;
-    top:240px;
-    font-size: 23px;
-    color: #0e6ec1;
-}
-.icons{
-    position:absolute;
-    left:100px;
-    
-
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  top:20px;
+  left: 1450px;
+  
 }
 
-.symbol {
-    position: relative;
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    width:30px;
-    height:30px;
-    left:1000px;
-    top:100px;
-  }
-  
-  .hovered {
-    position:relative;
-    filter: brightness(1.2);
-    color: #44C0AA;
-  }
-  
-  
-  .related-text {
-    position: relative;
-    display: block;
-    left:970px;
-    top:84px;
-    color: #26a38c;
-    font-weight: 500;
+button {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
-  }
-  .symbol1 {
-    position: absolute;
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    width:35px;
-    height:35px;
-    left:1040px;
-    top:98px;
-  }
-  
-  .eco{
-    position:absolute;
-    filter: brightness(1.2);
-    
-  }
-  
-  .related-text1 {
-    position:relative;
-    display: block;
-    left:1020px;
-    top:84px;
-    color: #26a38c;
-    font-weight: 500;
-  }
-  .symbol2 {
-    position:absolute;
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    width:43px;
-    height:40px;
-    left:1080px;
-    top:96px;
-  }
-  
-  .fast{
-    position:absolute;
-    filter: brightness(1.2);
-    
-  }
-  
-  .related-text2 {
-    position: relative;
-    display: block;
-    left:1030px;
-    top:84px;
-    color: #26a38c;
-    font-weight: 500;
-  }
-  .symbol3 {
-    position: absolute;
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    width:35px;
-    height:37px;
-    left:1125px;
-    top:98px;
-  }
-  
-  .comfort{
-    position:absolute;
-    filter: brightness(1.2);
-    
-  }
-  
-  .related-text3 {
-    position: relative;
-    display: block;
-    left:1115px;
-    top:84px;
-    color: #26a38c;
-    font-weight: 500;
-  }
-  .symbol4 {
-    position: absolute;
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    width:35px;
-    height:35px;
-    left:1163px;
-    top:98px;
-  }
-  
-  .mobility{
-    position:absolute;
-    filter: brightness(1.2);
-    
-  }
-  
-  .related-text4 {
-    position: relative;
-    display: block;
-    left:1145px;
-    top:84px;
-    color: #26a38c;
-    font-weight: 500;
-  }
-  
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 5px;
+  width:130px;
+  list-style-type:none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-color: #000000;
+  box-sizing: border-box;
+  border-width: 5px;;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+.avatar {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top:-8px;
+  left: 0px;
+  border-radius: 50%;
+}

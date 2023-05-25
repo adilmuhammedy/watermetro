@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './fare.css';
 import { useHistory } from 'react-router-dom';
 import logo from './images/logo.png';
@@ -10,6 +10,10 @@ import clockFast from './images/clock.png';
 import comfortGiven from './images/comfort.png';
 import eMobility from './images/e-mobility.png';
 
+import { getAuth,onAuthStateChanged, signOut } from "firebase/auth";
+import 'firebase/compat/auth';
+import firebase from 'firebase/compat/app';
+import avatar from './avatar.png';
 
 const FareDetails = (props) => {
   const history = useHistory();
@@ -22,6 +26,58 @@ const FareDetails = (props) => {
   const [isComfortGiven, setIsComfortGiven] = useState(false);
   const [isEMobility, setIsEMobility] = useState(false);
 
+  const [displayName, setDisplayName] = useState('');
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyCGRG2r6MT-CoPN1d-UVrbwhbyWhg0VGyU",
+      authDomain: "watermetro-69ffe.firebaseapp.com",
+      projectId: "watermetro-69ffe",
+      storageBucket: "watermetro-69ffe.appspot.com",
+      messagingSenderId: "405368155649",
+      appId: "1:405368155649:web:1ffea291743d7123c7da00",
+      measurementId: "G-CREXXM61GJ"
+      // Add your Firebase configuration object here
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        const displayName = user.displayName;
+        setDisplayName(displayName);
+        setIsUserSignedIn(true);
+       
+      } else {
+        setIsUserSignedIn(false);
+        setDisplayName('');
+      }
+    });
+  }, []);
+
+  const handleSignOut = () => {
+    const auth = getAuth();
+
+    signOut(auth)
+      .then(() => {
+        setIsUserSignedIn(false);
+        setDisplayName('');
+        console.log('User signed out successfully');
+        alert('User signed out successfully');
+        history.push('/');
+      })
+      .catch((error) => {
+        console.error('Sign-out error:', error);
+      });
+  };
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleHomeClick = () => {
     history.push('/');
@@ -105,7 +161,10 @@ const FareDetails = (props) => {
           <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
           <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
           <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
-          <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
+          {!isUserSignedIn && (
+        <h4 className="login" onClick={handleLoginClick} >LOGIN</h4>
+        )}
+
         </header>
         <div className="rectangle"></div>
       </div>
@@ -217,6 +276,21 @@ const FareDetails = (props) => {
             <p className="related-text4">E-Mobility</p>
           )}
         </div>
+        {isUserSignedIn && (
+          <div className="dropdown">
+            <img src={avatar} alt="Avatar" className="avatar" onClick={toggleDropdown} />
+            <div className="welcome-message">
+              Welcome, {displayName}!
+            </div>
+            {isOpen && (
+              <ul className="dropdown-menu">
+                <li>Account</li>
+                <li>Settings</li>
+                <li onClick={handleSignOut}>Logout</li>
+              </ul>
+            )}
+          </div>
+        )}
       </div>
     </>
   );

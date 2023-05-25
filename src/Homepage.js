@@ -2,18 +2,74 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from './images/logo.png';
 import './Homepage.css';
-
+import { getAuth,onAuthStateChanged, signOut } from "firebase/auth";
+import 'firebase/compat/auth';
+import firebase from 'firebase/compat/app';
 import metroImage from './metro.jpg';
 import metro1Image from './metro1.jpg';
 import metro2Image from './metro2.jpg';
 import watermetroImage from './watermetro.webp';
 import watermetro1Image from './watermetro1.jpg';
 import watermetro2Image from './watermetro2.jpg';
+import avatar from './avatar.png';
 
 
 function Home() {
+
+  const [displayName, setDisplayName] = useState('');
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const history = useHistory();
-  
+
+  useEffect(() => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyCGRG2r6MT-CoPN1d-UVrbwhbyWhg0VGyU",
+      authDomain: "watermetro-69ffe.firebaseapp.com",
+      projectId: "watermetro-69ffe",
+      storageBucket: "watermetro-69ffe.appspot.com",
+      messagingSenderId: "405368155649",
+      appId: "1:405368155649:web:1ffea291743d7123c7da00",
+      measurementId: "G-CREXXM61GJ"
+      // Add your Firebase configuration object here
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        const displayName = user.displayName;
+        setDisplayName(displayName);
+        setIsUserSignedIn(true);
+        history.push('/');
+      } else {
+        setIsUserSignedIn(false);
+        setDisplayName('');
+      }
+    });
+  }, []);
+
+  const handleSignOut = () => {
+    const auth = getAuth();
+
+    signOut(auth)
+      .then(() => {
+        setIsUserSignedIn(false);
+        setDisplayName('');
+        console.log('User signed out successfully');
+        alert('User signed out successfully');
+        history.push('/');
+      })
+      .catch((error) => {
+        console.error('Sign-out error:', error);
+      });
+  };
+
+  const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
   const handleHomeClick = () => {
     history.push('/');
   }
@@ -33,7 +89,7 @@ function Home() {
   const handleLoginClick = () => {
     history.push('/login');
   }
-
+ 
   const Slideshow = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -55,22 +111,36 @@ function Home() {
         clearInterval(interval); // Clean up the interval on component unmount
       };
     }, []);
-  
+   
     return (
       <div>
         <img className="slide-container" src={images[currentImageIndex]} alt="Slideshow" />
       </div>
     );
-  }
+  };
 
   return (
-    <><div className="Home"></div><img src={logo} className="logo" alt="watermetro" /><header className="home-header">
-      <h4 className="home" onClick={handleHomeClick}>HOME</h4>
-      <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
-      <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
-      <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
-      <h4 className="login" onClick={handleLoginClick}>LOGIN</h4>
-    </header><div className="rectangle"></div><div className="homepagee">
+    <div className="Home">
+     
+      <img src={logo} className="logo" alt="watermetro" />
+      <header className="home-header">
+        <h4 className="home" onClick={handleHomeClick}>HOME</h4>
+        <h4 className="booktickets" onClick={handleBookTicketsClick}>BOOK TICKETS</h4>
+        <h4 className="terminals" onClick={handleTerminalsClick}>TERMINALS</h4>
+        <h4 className="faredetails" onClick={handleFareDetailsClick}>FARE DETAILS</h4>
+        {!isUserSignedIn && (
+        <h4 className="login" onClick={handleLoginClick} >LOGIN</h4>
+        )}
+        {isUserSignedIn && (
+        <div className="welcome-message">
+ 
+          Welcome, {displayName}!
+          
+        </div>
+      )}
+      </header>
+      <div className="rectangle"></div>
+      <div className="homepagee">
         <h3 className="metro">Kochi Water Metro</h3>
         <h4 className="heading">Kochi became India's first city to have a Water Metro Project</h4>
         <p className="descri">Kochi, Kerala has become India's first city to have a Water Metro Project after the launch of its first boat in December 2021, namely 'Muziris,' among the 23 battery-powered electric boats being manufactured by Cochin Shipyard Limited.</p>
