@@ -1,8 +1,10 @@
-.Home{
+.Home {
   position: absolute;
-  width:850px;
-  height:100%;
+  width: 80%; /* Adjust the width as per your requirement */
+  height: 100%;
+  margin: 0 auto; /* Center the page horizontally */
 }
+
 
 .home{
 
@@ -62,7 +64,7 @@ top: -26px;
 }
 .rectangle {
   position: relative; /* Change from absolute to relative */
-  width: 140px;
+  width: 180px;
   height: 100px;
   margin-left: auto; /* Add margin-left and margin-right with auto */
   margin-right: auto;
@@ -73,7 +75,7 @@ top: -26px;
 .homepagee{
   position: relative;
   top:120px;
-  width:100%;
+  width:750px;
 }
 .metro{
   position:relative;
@@ -155,11 +157,11 @@ top: -26px;
 
 .slide-container {
   position: relative;
-  width: 80%;
-  left:640px; 
+  width: 45%;
   height:440px;
+  left:-30px;
   float:right;
-  margin-top: -140px;
+  margin-top: -155px;
   border-radius: 20px;
 }
 
@@ -173,49 +175,78 @@ top: -26px;
 }
 
 .wave-animation {
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  top: 643px;
   left: 0;
-  width: 1400px;
-  height: 100px;
+  width: 1540px;
+  height: 53px;
   overflow: hidden;
 }
 
 .wave-animation path {
-  fill: #93DCEC;
-  animation: waveFlow 8s linear infinite;
+  fill: #2577cf81;
+  animation: waveFlow 3s linear infinite;
 }
 
 @keyframes waveFlow {
   0% {
-    transform: translateX(0);
+    transform: translateX(-35px);
+  }
+  50% {
+    transform: translateX(35px);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-35px);
   }
 }
 
-
 .wave-animation2 {
   position: absolute;
-  top:660px;
+  top: 643px;
   left: 0;
-  width: 1500px;
-  height: 200px;
+  width: 1540px;
+  height: 53px;
   overflow: hidden;
 }
 
 .wave-animation2 path {
-  fill: #64c3d87a;
-  animation: waveFlow 5s linear infinite;
+  fill: #2e7ed378;
+  animation: waveFlow2 8s linear infinite;
 }
 
-@keyframes waveFlow {
+@keyframes waveFlow2 {
   0% {
-    transform: translateX(0%);
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(-40px);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(40px);
   }
 }
+.wave-animation3 {
+  position: absolute;
+  top: 643px;
+  left: 0;
+  width: 1540px;
+  height: 53px;
+  overflow: hidden;
+}
 
+.wave-animation3 path {
+  fill: #2e7ed37a;
+  animation: waveFlow2 5s linear infinite;
+}
+
+@keyframes waveFlow2 {
+  0% {
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
