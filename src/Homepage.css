@@ -159,7 +159,7 @@ top: -26px;
   left:640px; 
   height:440px;
   float:right;
-  margin-top: -140px;
+  margin-top: -120px;
   border-radius: 20px;
 }
 
@@ -217,5 +217,12 @@ top: -26px;
   100% {
     transform: translateX(-100%);
   }
+}
+
+.welcome-message{
+  position:absolute;
+  width:200px;
+  right:10px;
+  top:100px;
 }
 
