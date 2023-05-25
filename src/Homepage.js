@@ -117,9 +117,7 @@ function Home() {
         <img className="slide-container" src={images[currentImageIndex]} alt="Slideshow" />
       </div>
     );
-  }
-
-  
+  };
 
   return (
     <div className="Home">
@@ -133,8 +131,6 @@ function Home() {
         {!isUserSignedIn && (
         <h4 className="login" onClick={handleLoginClick} >LOGIN</h4>
         )}
-
-       
         {isUserSignedIn && (
         <div className="welcome-message">
  
