@@ -168,6 +168,7 @@ const FareDetails = (props) => {
         </header>
         <div className="rectangle"></div>
       </div>
+      <div className="faredata">
       <h2 className="fare">FARE DETAILS</h2>
       <div className="rect">
         <form onSubmit={handleSubmit}>
@@ -277,13 +278,13 @@ const FareDetails = (props) => {
           )}
         </div>
         {isUserSignedIn && (
-          <div className="dropdown">
-            <img src={avatar} alt="Avatar" className="avatar" onClick={toggleDropdown} />
-            <div className="welcome-message">
+          <div className="dropdown1">
+            <img src={avatar} alt="Avatar" className="avatar1" onClick={toggleDropdown} />
+            <div className="welcome-message1">
               Welcome, {displayName}!
             </div>
             {isOpen && (
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu1">
                 <li>Account</li>
                 <li>Settings</li>
                 <li onClick={handleSignOut}>Logout</li>
@@ -291,6 +292,7 @@ const FareDetails = (props) => {
             )}
           </div>
         )}
+      </div>
       </div>
     </>
   );

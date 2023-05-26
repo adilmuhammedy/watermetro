@@ -95,7 +95,7 @@ const Terminals = () => {
       case 'kakkanad':
         return (
           <div className='terminal2'>
-            <h3 className='t1'>Kakkanad </h3>
+            <h3 className='t1'>KAKKANAD </h3>
             <p className='kak'>Kakkanad is a rapidly developing city known for its IT and industrial parks</p>
             <p className='loc'>Terminal Location: Kakkanad, Kochi</p>
             <p className='descrip'>Kakkanad is located near Thrikkakara, the capital of the mythical King Mahabali. The old name of Kakkanad is Kakkanad-Thrikkakara. Bali succeeded Virochana as the king of the Asuras, and his reign over the realm was characterized by peace and prosperity. It is especially notable for its significance in the festival of Onam, and in the tale associated with it linked to the famous Thrikkakara temple. Kakkanad traces it’s history back to the rule of King Mahabali, under who’s rule everyone was equal and prospered. This is true for Kakkanad even today. Being the IT hub of Kochi, it has contributed to the economic progress and development of the city. With young energetic crowd that aspires for a modern lifestyle, Kakkanad is an upcoming hot spot for modern cafés and cosmopolitan culture. Despite the abundance of high rise buildings, the lush green landscape around provides an escape from the monotony of IT life
@@ -106,7 +106,7 @@ const Terminals = () => {
       case 'vyttila':
         return (
           <div className='terminal2'>
-            <h3 className='t1'>Vyttila</h3>
+            <h3 className='t1'>VYTTILA</h3>
             <p className='kak'>Largest Mobility Hub connecting various forms of transportation</p>
             <p className='loc'>Terminal Location: Vyttila, Kochi</p>
 
@@ -116,16 +116,16 @@ const Terminals = () => {
       case 'highcourt':
         return (
           <div className="terminal2">
-            <h3 className='t1'>Highcourt </h3>
+            <h3 className='t1'>HIGHCOURT </h3>
             <p className='kak'>The High Court facilitates the needs of the people, with a neutral outlook not just through law and order but also through connectivity to the remote islands of Kochi.</p>
-            <p className='loc'>Terminal Location: Highcourt, Kochi</p>
+            <p className='loc1'>Terminal Location: Highcourt, Kochi</p>
             <p className='descrip'>The present State of Kerala is result of integrating the erstwhile princely kingdoms of Travancore and Cochin with Malabar district and Kasaragod. The present judicial system in Kerala has its roots dating back to the days of the monarchs of the Kingdoms of Travancore and Cochin. The Ram Mohan Palace used to house the High Court of Kerala until 2006. The heritage building in the art deco style, which was current at the time, was built by Chennai-based architects Prynne, Abbott and Davis. In the early 1940s, during World War II, the palace served as the combined military hospital where British and Indian officers of the British Army recuperated from their injuries. It became the High Court building of the Cochin-Travancore State 1949 onward, and in 1956, following Kerala piravi, it became the High Court of Kerala. At present it houses the offices of the Judicial Academy, ADR Centre and the Vigilance Registrar. In 2006, the Kerala High Court moved to the current building. The High Court empowers and protects the people of the city. It facilitates the needs of the people, with a neutral outlook not just through law and order but also through connectivity to the remote islands of Kochi.</p>
           </div>
         );
       case 'vypin':
         return (
           <div className='terminal2'> 
-            <h3 className='t1'>Vypin </h3>
+            <h3 className='t1'>VYPIN</h3>
             <p className='kak'>Vypin is known for its beaches, lagoons, and fishing villages.</p>
             <p className='loc'>Terminal Location: Vypin, Kochi</p>
             <p className='descrip'>The Vypin terminal is located on Vypin Island, which is a popular tourist destination in Kochi. The island is known for its scenic beauty, pristine beaches, and fishing villages. The Vypin terminal is one of the thirty eight terminals that are part of the Phase 1 of the Kochi Water Metro project. The Vypin terminal is expected to provide an efficient and eco-friendly mode of transportation for the residents and visitors of the island. The terminal is expected to have modern facilities such as ticket counters, waiting areas, and other amenities for passengers. The terminal is also expected to have a lift facility for the convenience of passengers. The Vypin terminal is expected to provide seamless connectivity to other modes of transport, such as buses and taxis, to provide a hassle-free travel experience to commuters. The terminal is also expected to have bike rental facilities for visitors who prefer to explore the island on their own. The Vypin terminal is located near several popular tourist destinations on the island, such as the Cherai Beach, the Munambam Fishing Harbor, and the Puthuvype Lighthouse. Visitors can also explore the traditional fishing villages and experience the local culture and lifestyle of the island. The Vypin terminal on the Kochi Water Metro is expected to play a crucial role in promoting sustainable transportation and improving the overall quality of life for the people of Vypin Island.</p>
