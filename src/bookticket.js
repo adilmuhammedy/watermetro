@@ -57,8 +57,6 @@ const BookTicket = (props) => {
       .then(() => {
         setIsUserSignedIn(false);
         setDisplayName('');
-        console.log('User signed out successfully');
-        alert('User signed out successfully');
         history.push('/');
       })
       .catch((error) => {
@@ -145,10 +143,10 @@ const BookTicket = (props) => {
       isValid = false;
     }
     else if(!(
-      (from==="kakkanad" && to==="vyttila")||
-      (from==="vyttila" && to==="kakkanad")||
-      (from==="highcourt" && to==="vypin")||
-      (from==="vypin" && to==="highcourt"))){
+      (from==="Kakkanad" && to==="Vyttila")||
+      (from==="Vyttila" && to==="Kakkanad")||
+      (from==="Highcourt" && to==="Vypin")||
+      (from==="Vypin" && to==="Highcourt"))){
       alert( 'Selected route is not available, sorry!');
       isValid = false;
     
@@ -229,28 +227,28 @@ const BookTicket = (props) => {
           <div className='selectfrom'>
             <select value={selectedFrom} onChange={handleFromChange} className="selectfrom">
               <option value="SELECT">----SELECT----</option>
-              <option value="kakkanad">KAKKANAD</option>
-              <option value="vyttila">VYTTILA</option>
-              <option value="highcourt">HIGHCOURT</option>
-              <option value="vypin">VYPIN</option>
+              <option value="Kakkanad">KAKKANAD</option>
+              <option value="Vyttila">VYTTILA</option>
+              <option value="Highcourt">HIGHCOURT</option>
+              <option value="Vypin">VYPIN</option>
             </select>
           </div>
           <h4 className="to">TO</h4>
           <div className='selectto'>
             <select value={selectedTo} onChange={handleToChange} className="selectto">
               <option value="SELECT">----SELECT----</option>
-              <option value="kakkanad">KAKKANAD</option>
-              <option value="vyttila">VYTTILA</option>
-              <option value="highcourt">HIGHCOURT</option>
-              <option value="vypin">VYPIN</option>
+              <option value="Kakkanad">KAKKANAD</option>
+              <option value="Vyttila">VYTTILA</option>
+              <option value="Highcourt">HIGHCOURT</option>
+              <option value="Vypin">VYPIN</option>
             </select>
           </div>
           <h4 className="tickettype">Ticket-type</h4>
-          <div className='type'>
-            <select value={selectedType} onChange={handleTypeChange} className="type">
-            <option value="">SELECT</option>
-              <option value="1">One-way</option>
-              <option value="2">Two-way</option>
+          <div className='typ'>
+            <select value={selectedType}  className="selecttype" onChange={handleTypeChange}>
+             <option value="">SELECT</option>
+              <option value="One-way">One-way</option>
+              <option value="Two-way">Two-way</option>
             </select>
           </div>
           <h4 className="nopass">No.of Passengers</h4>

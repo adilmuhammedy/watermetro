@@ -80,7 +80,7 @@ app.post('/confirmation', async (req, res) => {
     // Retrieve the fare value from the document
     if (foundDocument) {
       let fare = foundDocument.fare;
-      if (ticketType === '2') {
+      if (ticketType === 'Two-way') {
         fare = fare * 2;
       }
       if (nopass > 1) {

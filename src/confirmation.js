@@ -84,9 +84,8 @@ console.log('Fare:', fare);
         <h2 className="ticket">TICKET DETAILS</h2>
         <h4 className="boarding" id="depart">📍 {from}</h4>
         <h4 className="destination" id="arrive">📍{to}</h4>  
-        <h4 className="deep">departing time: 00:00</h4>
-       <h4 className="arri">arriving time: 00:00</h4>
-        <h4 className="duration">Total passengers:{nopass}</h4>
+       <h4 className="type">Ticket Type: {ticketType}</h4>
+        <h4 className="pass">Total passengers:{nopass}</h4>
         <h4 className="fares">Ticket Fare: {fare} rs</h4>
         <button type="submit" className="sub">Confirm</button>
       </div>

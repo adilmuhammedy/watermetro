@@ -53,8 +53,6 @@ const Terminals = () => {
       .then(() => {
         setIsUserSignedIn(false);
         setDisplayName('');
-        console.log('User signed out successfully');
-        alert('User signed out successfully');
         history.push('/');
       })
       .catch((error) => {
