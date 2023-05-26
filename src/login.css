@@ -282,10 +282,11 @@ button {
 }
 .welcome-message{
   position: absolute;
-  left:auto;
+  left:-210px;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 19px;
+  width:300px;
 }
   
   
